@@ -1,5 +1,6 @@
 import './App.css'
 import Banner from './components/Banner'
+import Cartheader from './components/Cartheader'
 import Navbar from './components/Navbar'
 import Statesection from './components/Statesection'
 
@@ -10,6 +11,7 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <Statesection></Statesection>
+      <Cartheader></Cartheader>
     </>
   )
 }
