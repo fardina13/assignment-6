@@ -1,7 +1,7 @@
 import { ShoppingCart } from 'lucide-react';
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = ({cartCount}) => {
     return (
         <div>
             <nav className="flex items-center justify-between px-10 py-5">
