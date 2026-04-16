@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Statesection from './components/Statesection'
 import ProductCard from './components/ProductCard'
 import CartItem from './components/CartItem'
+import Stepsection from './components/Stepsection'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -53,7 +54,7 @@ function App() {
             ))}
           </div>
         ) : (
-          <div className="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-md border">
+          <div className="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-md">
             <h2 className="text-2xl font-bold mb-4">Selected Products</h2>
             {cart.length === 0 ? (
               <p className="text-gray-400 italic">No products added yet.</p>
@@ -63,17 +64,17 @@ function App() {
                   <CartItem 
                     key={index} 
                     item={item} 
-                    handleRemove={() => handleRemove(item.id)} 
+                    handleRemove={handleRemove} 
                   />
                 ))}
                    
-                <div className="border-t pt-8 mt-10">
+                <div className=" pt-8 mt-10">
                   <div className="flex justify-end items-center gap-4 text-xl font-bold mb-6">
                     <span>Total</span>
                     <span>${totalPrice}</span>
                   </div>
 
-                  <div className="mt-6 border-t pt-4">
+                  <div className="mt-6 pt-4">
                     <button 
                       onClick={() => setCart([])} 
                       className="w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white py-3 rounded-xl font-bold"
@@ -87,6 +88,7 @@ function App() {
           </div>
         )} {/* <--- Added missing closing parenthesis for the activeTab ternary */}
       </main>
+      <Stepsection></Stepsection>
     </>
   );
 } // <--- Added missing closing brace for the function

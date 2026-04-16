@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartItem = ({ item, onRemove }) => {
+const CartItem = ({ item, handleRemove }) => {
   return (
     <div className="flex items-center justify-between p-4 bg-gray-50 border border-gray-100 rounded-xl mb-3">
       <div className="flex items-center gap-4">
@@ -11,7 +11,7 @@ const CartItem = ({ item, onRemove }) => {
         </div>
       </div>
       <button 
-        onClick={onRemove}
+        onClick={() => handleRemove(item.id)}
         className="text-red-500 hover:bg-red-50 px-3 py-1 rounded-lg text-sm transition"
       >
         Remove
