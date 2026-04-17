@@ -1,16 +1,23 @@
-# React + Vite
+*Project Name*- Digital Tools Buying Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+*Description* - 
+DigiTools is a modern React-based web application designed to showcase and manage premium digital tools. The platform allows users to browse through various AI-powered tools, add them to a shopping cart, and manage their selections seamlessly with real-time feedback.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+*Technology I used*- 
+- *React.js*
+- *Tailwind CSS*
+- *Lucide React / ShoppingCart Icons*
+- *React-Toastify*
+- *JSON*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*Features of my project*-
+- *Dynamic Product Display:* Fetches and displays a collection of premium digital tools from a JSON data source.
+- *Advanced Cart System:* - Add products to the cart with a single click.
+  - Real-time cart count badge in the navigation bar.
+  - View selected items in a clean, organized cart layout.
+- *Interactive Notifications:* Integrated *React-Toastify* to provide instant visual feedback when:
+  - An item is added to the cart (Success Toast).
+  - An item is removed from the cart (Warning/Error Toast).
+  - The checkout process is initiated.
