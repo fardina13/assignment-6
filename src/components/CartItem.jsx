@@ -11,7 +11,7 @@ const CartItem = ({ item, handleRemove }) => {
         </div>
       </div>
       <button 
-        onClick={() => handleRemove(item.id)}
+        onClick={() => handleRemove(item.id, item.name)}
         className="text-red-500 hover:bg-red-50 px-3 py-1 rounded-lg text-sm transition"
       >
         Remove

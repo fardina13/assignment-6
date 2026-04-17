@@ -22,18 +22,15 @@ function App() {
 
   const handleAddToCart = (product) => {
   setCart([...cart, product]);
-  // আপনার স্ক্রিনশটে এখানে একটি ভুল ব্র্যাকেট ছিল
   toast(`${product.name} added to cart!`, {
     position: "top-right",
     autoClose: 2000,
-  }); // এখানে ব্র্যাকেটগুলো খেয়াল করুন
+  });
 };
 
   const handleRemove = (id, name) => {
   const remainingCart = cart.filter(item => item.id !== id);
   setCart(remainingCart);
-  
-  // এখানে ভালো করে লক্ষ্য করুন: (`) ব্যাকটিক ব্যবহার করা হয়েছে
   toast.warn(`${name} removed from cart!`, {
     position: "top-right",
     autoClose: 2000,
@@ -103,16 +100,16 @@ function App() {
                       Proceed to Checkout
                     </button>
                   </div>
-                </div> {/* <--- Added missing closing div for the total/checkout container */}
+                </div> 
               </>
-            )} {/* <--- Added missing closing brace for the cart.length ternary */}
+            )}
           </div>
-        )} {/* <--- Added missing closing parenthesis for the activeTab ternary */}
+        )}
       </main>
       <Stepsection></Stepsection>
       
     </>
   );
-} // <--- Added missing closing brace for the function
+}
 
 export default App;
