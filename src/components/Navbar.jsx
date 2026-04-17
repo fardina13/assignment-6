@@ -14,7 +14,19 @@ const Navbar = ({cartCount}) => {
           <a href="#">FAQ</a>
         </div>
         <div className="flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-purple-600 transition-colors"><ShoppingCart></ShoppingCart></button>
+            <div className="relative">
+
+  <button className="text-gray-600 hover:text-purple-600 transition-colors">
+    <ShoppingCart size={25} />
+  </button>
+
+  
+  {cartCount > 0 && (
+    <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+      {cartCount}
+    </span>
+  )}
+</div>
           <button className="text-gray-700">Login</button>
           <button className="bg-purple-600 text-white px-6 py-2 rounded-full font-semibold">
             Get Started
