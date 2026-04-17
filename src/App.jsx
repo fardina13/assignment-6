@@ -7,6 +7,7 @@ import Statesection from './components/Statesection'
 import ProductCard from './components/ProductCard'
 import CartItem from './components/CartItem'
 import Stepsection from './components/Stepsection'
+import { ToastContainer, toast } from 'react-toastify'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -20,18 +21,38 @@ function App() {
   }, []);
 
   const handleAddToCart = (product) => {
-    setCart([...cart, product]);
-  };
+  setCart([...cart, product]);
+  // আপনার স্ক্রিনশটে এখানে একটি ভুল ব্র্যাকেট ছিল
+  toast(`${product.name} added to cart!`, {
+    position: "top-right",
+    autoClose: 2000,
+  }); // এখানে ব্র্যাকেটগুলো খেয়াল করুন
+};
 
-  const handleRemove = (id) => {
-    const remainingCart = cart.filter(item => item.id !== id);
-    setCart(remainingCart);
-  };
+  const handleRemove = (id, name) => {
+  const remainingCart = cart.filter(item => item.id !== id);
+  setCart(remainingCart);
+  
+  // এখানে ভালো করে লক্ষ্য করুন: (`) ব্যাকটিক ব্যবহার করা হয়েছে
+  toast.warn(`${name} removed from cart!`, {
+    position: "top-right",
+    autoClose: 2000,
+  });
+};
   
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   return (
     <>
+      <ToastContainer position="top-right"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover></ToastContainer>
       <Navbar cartCount={cart.length} />
       <Banner />
       <Statesection />
@@ -89,6 +110,7 @@ function App() {
         )} {/* <--- Added missing closing parenthesis for the activeTab ternary */}
       </main>
       <Stepsection></Stepsection>
+      
     </>
   );
 } // <--- Added missing closing brace for the function
