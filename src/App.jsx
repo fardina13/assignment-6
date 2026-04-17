@@ -39,6 +39,19 @@ function App() {
   
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
+  const handleCheckout = () => {
+  if (cart.length === 0) {
+    toast.error("Your cart is empty!");
+    return;
+  }
+  
+  setCart([]);
+  setActiveTab('products');
+  toast.success("Order placed successfully!", {
+    position: "top-center",
+  });
+};
+
   return (
     <>
       <ToastContainer position="top-right"
@@ -94,7 +107,7 @@ function App() {
 
                   <div className="mt-6 pt-4">
                     <button 
-                      onClick={() => setCart([])} 
+                      onClick={handleCheckout} 
                       className="w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white py-3 rounded-xl font-bold"
                     >
                       Proceed to Checkout
